@@ -1,14 +1,14 @@
 const express = require('express');
 const { connectToMongo } = require('./config');
 const app = express();
-const cors = require('cors');
 const dotenv = require('dotenv');
+const cors = require('cors');
+app.use(cors());
 dotenv.config();
 
 const PORT = process.env.port || 8000;
 
 app.use(express.json());
-app.use(cors());
 
 connectToMongo()
 
